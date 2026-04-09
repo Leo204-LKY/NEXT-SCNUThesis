@@ -1,5 +1,64 @@
 # NEXT-SCNUThesis
 
+> [!CAUTION]
+> 中方和英方的论文格式可能会发生变化，因此本模板不一定能完全满足最新的格式要求。建议检查最新的论文格式要求，多将论文发给指导老师检查，并根据需要调整模板。
+
+- 基于 [FaterYu/NEXT-SCNUThesis](https://github.com/FaterYU/NEXT-SCNUThesis) 修改而来，支持在同一套模板中使用 $\LaTeX$ 编写同时适用于中方（华师）和英方（阿伯丁）的毕业论文，并根据需要渲染成符合中方或英方要求的论文格式。
+
+### 如何使用
+
+1. 克隆或下载本仓库，上传至 Overleaf 或在本地使用 LaTeX 编辑器打开。
+2. 获取英方论文模板（由于英方有标准 LaTeX 论文模板，为避免英方模板更新，而新版本格式有较大改变，此处不提供英方模板），复制其中的 `main.tex`、`abdnthesis.cls` 和 `abdnshield.pdf` 文件到本仓库的根目录。
+3. 在 `main.tex` 中修改以下内容：
+
+   ```diff
+   ...
+
+   - \usepackage[round,colon,authoryear]{natbib}
+   + \usepackage[numbers,sort&compress]{natbib}
+   \setlength{\bibsep}{0pt}
+   - \bibliographystyle{apalike}
+   + \bibliographystyle{unsrt}
+   \usepackage{hyperref}
+
+   ...
+
+   \begin{abstract}
+   -  An expansion of the title and contraction of the thesis.
+   +  \input{content/abstract-en.tex}
+   \end{abstract}
+
+   \begin{acknowledgements}
+   -  Much stuff borrowed from elsewhere
+   + \input{content/acknowledgements.tex}
+   \end{acknowledgements}
+
+   ...
+
+   - \bibliography{mybib}
+   + \bibliography{reference}
+
+   ...
+   ```
+
+4. 在 `content` 目录下创建各章节的 tex 文件，并在 `main.tex` 和 `main-scnu.tex` 中使用 `\include{content/xxx.tex}` 插入到对应位置。
+   - 摘要（中文/英文）和致谢直接在 `abstract-zh.tex`、`abstract-en.tex` 和 `acknowledgements.tex` 中编辑内容，无需修改 `main.tex` 和 `main-scnu.tex`。
+   - 图片建议放在 `fig` 目录下，在 `\includegraphics` 用相对根目录的路径引用，如 `\includegraphics{fig/example.png}`。
+
+### 注意事项
+
+- 中方论文需使用 XeLaTeX 编译，英方论文需使用 pdfLaTeX 编译。
+  - 在 Overleaf 中，点击页面左下角的 ⚙ → 编译器（Compiler），修改“主文档（Main document）”和“编译器（Compiler）”两个选项即可在两种论文格式之间切换。
+    - 英方论文主文档选 `main.tex`，编译器选 `pdfLaTeX`
+    - 中方论文主文档选 `main-scnu.tex`，编译器选 `XeLaTeX`
+- 其他内容请参考原始仓库中的 README 和 Wiki，我会在之后尝试合并这些内容。
+
+---
+
+以下为原始 README
+
+# NEXT-SCNUThesis
+
 华南师范大学本科毕业论文 LaTeX 模板 **[更新中]**
 
 [Overleaf Template | NEXT-SCNUThesis](https://www.overleaf.com/read/cztdbznzmfwm#891a33)
@@ -8,7 +67,7 @@
 [![release](https://img.shields.io/github/v/release/FaterYU/NEXT-SCNUThesis?include_prereleases&style=flat)](https://github.com/FaterYU/NEXT-SCNUThesis/releases/latest)
 
 [![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/FaterYU/NEXT-SCNUThesis)](https://github.com/FaterYU/NEXT-SCNUThesis/issues)
-[![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-closed/FaterYU/NEXT-SCNUThesis)]([https://github.com/FaterYU/NEXT-SCNUThesis/issues](https://github.com/FaterYU/NEXT-SCNUThesis/issues?q=is%3Aissue%20state%3Aclosed))
+[![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-closed/FaterYU/NEXT-SCNUThesis)](<[https://github.com/FaterYU/NEXT-SCNUThesis/issues](https://github.com/FaterYU/NEXT-SCNUThesis/issues?q=is%3Aissue%20state%3Aclosed)>)
 
 [![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/FaterYU/NEXT-SCNUThesis)](https://github.com/FaterYU/NEXT-SCNUThesis/pulls)
 [![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr-closed/FaterYU/NEXT-SCNUThesis)](https://github.com/FaterYU/NEXT-SCNUThesis/pulls?q=is%3Aissue%20state%3Aclosed)
