@@ -360,9 +360,9 @@
 % 重定义 \@makecaption 命令
 \long\def\@makecaption#1#2{%
   \vskip\abovecaptionskip
-  \sbox\@tempboxa{\zihao{5} #1\quad#2}
+  \sbox\@tempboxa{\zihao{5} #1.\quad#2}
   \ifdim \wd\@tempboxa >\hsize
-    {\zihao{5} #1\quad#2\par} % 标题过长时换行
+    {\zihao{5} #1.\quad#2\par} % 标题过长时换行
   \else
     \global \@minipagefalse
     \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}% 居中标题
