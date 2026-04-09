@@ -81,7 +81,7 @@
   \begin{center}
     \begin{figure}[htbp]
         \centering
-        \includegraphics[width=0.95\linewidth]{fig/scnu_thesis_logo.eps}
+        \includegraphics[width=0.95\linewidth]{scnu_thesis_logo.eps}
     \end{figure}
     {\zihao{-1} \song \bfseries 本科毕业论文（设计） \par}
     % \vspace{2em}
