@@ -6,12 +6,12 @@
 % =================
 
 \title{Next SCNU Thesis} % 论文题目
-\supervisor{xxx} % 指导老师
+\supervisor{xxx} % 指导老师，对于中方版本，中方指导老师在前，英方指导老师在后
 \author{郑誉} % 学生姓名
 \studentid{20210000000} % 学号
 \institute{xxx} % 学院
 \major{xxx} % 专业
-\date{2025年4月} % 毕业时间
+\date{2026年4月} % 毕业时间
 
 \keywordsen{xxx; xxx; xxx} % 英文关键词
 \keywordszh{xxx, xxx, xxx} % 中文关键词
@@ -28,11 +28,11 @@
     \maketitle
 
     \begin{abstracten}
-        % 英文摘要
+        \input{content/abstract-en.tex}
     \end{abstracten}
 
     \begin{abstractzh}
-        % 中文摘要
+        \input{content/abstract-zh.tex}
     \end{abstractzh}
 
     % == 目录 ==
@@ -40,8 +40,8 @@
     % =========
 
     % == 正文 ==
-    % 推荐使用 \include{xxx} 来分章节
-    \chapter{MAIN BODY}
+    % 在 content 目录下以章节为单位创建 tex 文件，在其中编辑章节内容，并使用 \include{content/xxxx.tex} 插入到这里
+    \include{content/01-introduction.tex}
     % =========
 
     % == 参考文献 ==
@@ -49,13 +49,12 @@
     % =========
 
     % == 附录 ==
-    % 推荐使用 \include{xxx} 插入附录, 把\appendix也放外部tex中避免换页
+    % 在 content 目录下以章节为单位创建 tex 文件，在其中编辑章节内容，并使用 \include{content/xxxx.tex} 插入到这里
     \appendix
-    \chapter{User Manual}
-    \chapter{Maintenance Manual}
+    \include{content/a1-user-manual.tex}
     % =========
 
     % == 致谢 ==
-    % 推荐使用 \include{xxx} 插入致谢, 把\acknowledgements也放外部tex中避免换页
-    \acknowledgements
+    % 在 content/acknowledgements.tex 中编辑致谢内容，并使用 \include{content/acknowledgements.tex} 插入到这里
+    \include{content/acknowledgements.tex}
 \end{document}
