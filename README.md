@@ -41,7 +41,7 @@
    ...
    ```
 
-4. 在 `content` 目录下创建各章节的 tex 文件，并在 `main.tex` 和 `main-scnu.tex` 中使用 `\include{content/xxx.tex}` 插入到对应位置。
+4. 在 `content` 目录下创建各章节的 tex 文件，并在 `main.tex` 和 `main-scnu.tex` 中使用 `\include{content/xxx.tex}` 或 `\input{content/xxx.tex}` （取决于你需要新建一页展示章节，还是与之前的内容展示在同一页）插入到对应位置。
    - 摘要（中文/英文）和致谢直接在 `abstract-zh.tex`、`abstract-en.tex` 和 `acknowledgements.tex` 中编辑内容，无需修改 `main.tex` 和 `main-scnu.tex`。
    - 图片建议放在 `fig` 目录下，在 `\includegraphics` 用相对根目录的路径引用，如 `\includegraphics{fig/example.png}`。
 
