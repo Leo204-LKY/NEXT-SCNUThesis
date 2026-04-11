@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{NEXT-SCNUThesis}[2025/04/07 v1.0.0 SCNU Thesis Class]
+\ProvidesClass{NEXT-SCNUThesis}[2026/04/11 v1.1.1 SCNU Thesis Class]
 \LoadClass[a4paper,12pt]{report}
 
 \RequirePackage{graphicx}
@@ -32,6 +32,7 @@
 \RequirePackage[ruled, vlined]{algorithm2e}
 \RequirePackage{algpseudocode}
 \RequirePackage{xstring}
+\RequirePackage{microtype}
 
 \setCJKfamilyfont{zhsong}{SIMSUN.TTC}[Path = ./font/]% 覆盖原有zhsong
 
@@ -46,6 +47,12 @@
 
 \AtBeginDocument{\zihao{-4}} % 确保正文字号为小四号
 \setstretch{1.25} % 1.25倍行距
+
+% 借鉴 abdnthesis 的做法，优化断行
+\tolerance=2000        % 提高对宽间距的容忍度
+\emergencystretch=1em  % 当正常排版失败时，允许额外的 1em 伸缩空间
+\hfuzz=1pt             % 忽略 1pt 以内的微小溢出
+\hbadness=10000        % 关闭 underfull 警告
 
 \newcommand{\studentid}[1]{\def\@studentid{#1}}
 \newcommand{\institute}[1]{\def\@institute{#1}}
@@ -123,6 +130,7 @@
   \begin{center}
     {\zihao{-2} \bfseries  ABSTRACT} \\[1em]
   \end{center}
+  \sloppy % 确保纯英文摘要段落不会有长单词溢出
   \setlength{\parindent}{4em}
   \par
   \addcontentsline{toc}{chapter}{\zihao{-4}  ABSTRACT}
@@ -135,6 +143,7 @@
 }{
   \end{spacing}
   \par
+  \fussy % 恢复正常的排版模式
   \vspace{1em}
   \noindent
   {\zihao{-4} \bfseries  Key Words:}
@@ -312,6 +321,7 @@
 \newcommand{\reference}[1]{%
   \clearpage
   \begingroup
+  \sloppy
   \fancyhead{}
   \renewcommand{\headrulewidth}{0pt}
   \setstretch{1.5} % 1.5倍行距
