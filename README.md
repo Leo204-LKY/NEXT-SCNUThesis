@@ -21,6 +21,11 @@
    + \bibliographystyle{unsrt}
    \usepackage{hyperref}
 
+   \usepackage[T1]{fontenc}
+
+   + \newif\ifTableCaptionTop
+   + \TableCaptionTopfalse
+
    ...
 
    \begin{abstract}
@@ -46,6 +51,33 @@
    - 图片建议放在 `fig` 目录下，在 `\includegraphics` 用相对根目录的路径引用，如 `\includegraphics{fig/example.png}`。
 
 ### 注意事项
+
+> [!IMPORTANT]
+> 请务必阅读并遵守以下注意事项，以确保论文格式符合要求。
+
+- **表格**的标题需特殊处理
+  - 中方论文表格标题需放在表格上方，英方论文表格标题需放在表格下方。
+  - 请按以下格式编写表格（尤其是标题 `\caption` 和 `\label` 部分）
+
+    ```tex
+    \begin{table}[h]
+        \centering
+        \ifTableCaptionTop
+          \caption{Your caption here}
+          \label{tab:label-here}
+        \fi
+
+        \begin{table}
+          % Your table here
+        \end{table}
+
+        \ifTableCaptionTop\else
+          \caption{Your caption here}
+          \label{tab:label-here}
+        \fi
+    \end{table}
+    ```
+    - 需要编写两次 `\caption` 和 `\label`，分别放在表格的上方和下方，并使用 `\ifTableCaptionTop` 条件判断来控制显示位置。
 
 - 中方论文需使用 XeLaTeX 编译，英方论文需使用 pdfLaTeX 编译。
   - 在 Overleaf 中，点击页面左下角的 ⚙ → 编译器（Compiler），修改“主文档（Main document）”和“编译器（Compiler）”两个选项即可在两种论文格式之间切换。
