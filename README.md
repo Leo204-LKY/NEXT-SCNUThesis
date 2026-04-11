@@ -67,9 +67,9 @@
           \label{tab:label-here}
         \fi
 
-        \begin{table}
+        \begin{tabular}{c|c|c}
           % Your table here
-        \end{table}
+        \end{tabular}
 
         \ifTableCaptionTop\else
           \caption{Your caption here}
