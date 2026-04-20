@@ -174,7 +174,7 @@
   \par
   \vspace{1em}
   \noindent
-  {\zihao{-4} \bfseries \hei 关键词\quad ：}
+  {\zihao{-4} \bfseries \hei 关键词\quad：}
   {\zihao{-4} \song \@keywordszh}
 }
 
