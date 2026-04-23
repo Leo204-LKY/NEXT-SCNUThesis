@@ -91,31 +91,24 @@
         \includegraphics[width=0.95\linewidth]{scnu_thesis_logo.eps}
     \end{figure}
     {\zihao{-1} \song \bfseries 本科毕业论文（设计） \par}
-    % \vspace{2em}
-    % {\zihao{-0} \hei \bfseries 论文封面由学校统一印制 \par}
   \end{center}
-    % \vfill
     \vspace{8em}
   \begin{center}
-    % {\zihao{2}  \bfseries \@title \par}
-    % \vspace{8em} % 调整标题下方间距
+    % 标题：二号 黑体 居中
+    {\zihao{2} \hei \bfseries \@title \par}
+    \vspace{4em} % 标题与信息表之间的间距，可自行调整
 
     \begin{tabular}{@{}>{\centering\arraybackslash}p{2.5cm}@{}>{\centering\arraybackslash}p{8cm}@{}}
-    {\zihao{4} \song 论文题目：}   & 
-    {\zihao{4} \song 
-        \parbox[c]{8cm}{\centering \@title} 
-        \par\vspace{0.2em}\nointerlineskip\hrule width 8cm height 0.4pt} \\[1em]
-    {\zihao{4} \song 指导老师：}    & 
-      {\zihao{4} \song \makebox[8cm][c]{\@supervisor} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
-    {\zihao{4} \song 学生姓名：}   & 
+    
+    {\zihao{4} \song 学生姓名：}   &
       {\zihao{4} \song \makebox[8cm][c]{\@author} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
-    {\zihao{4} \song 学\qquad 号：} & 
+    {\zihao{4} \song 学\qquad 号：} &
       {\zihao{4} \song \makebox[8cm][c]{\@studentid} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
-    {\zihao{4} \song 学\qquad 院：}    & 
-      {\zihao{4} \song \makebox[8cm][c]{\@institute} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
-    {\zihao{4} \song 专\qquad 业：}    & 
+    {\zihao{4} \song 指导老师：}    &
+      {\zihao{4} \song \makebox[8cm][c]{\@supervisor} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
+    {\zihao{4} \song 专业班级：}    &
       {\zihao{4} \song \makebox[8cm][c]{\@major} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
-    {\zihao{4} \song 毕业时间：}    & 
+    {\zihao{4} \song 完成时间：}    &
       {\zihao{4} \song \makebox[8cm][c]{\@date} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
     \end{tabular}
   \end{center}
@@ -174,7 +167,7 @@
   \par
   \vspace{1em}
   \noindent
-  {\zihao{-4} \bfseries \hei 关键词\quad：}
+  {\zihao{-4} \bfseries \hei 关键词\quad ：}
   {\zihao{-4} \song \@keywordszh}
 }
 
