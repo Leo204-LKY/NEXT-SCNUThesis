@@ -104,11 +104,11 @@
       {\zihao{4} \song \makebox[8cm][c]{\@author} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
     {\zihao{4} \song 学\qquad 号：} &
       {\zihao{4} \song \makebox[8cm][c]{\@studentid} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
-    {\zihao{4} \song 指导老师：}    &
+    {\zihao{4} \song 指导教师：}    &
       {\zihao{4} \song \makebox[8cm][c]{\@supervisor} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
     {\zihao{4} \song 专业班级：}    &
       {\zihao{4} \song \makebox[8cm][c]{\@major} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
-    {\zihao{4} \song 完成时间：}    &
+    {\zihao{4} \song 完成日期：}    &
       {\zihao{4} \song \makebox[8cm][c]{\@date} \par \vspace{0.2em} \nointerlineskip \hrule width 8cm height 0.4pt} \\[1em]
     \end{tabular}
   \end{center}
@@ -126,7 +126,7 @@
   \sloppy % 确保纯英文摘要段落不会有长单词溢出
   \setlength{\parindent}{4em}
   \par
-  \addcontentsline{toc}{chapter}{\zihao{-4}  ABSTRACT}
+  \addcontentsline{toc}{chapter}{ABSTRACT}
   \begin{spacing}{1.5}
       % 正文字号设置并刷新字体属性
       \zihao{-4}\selectfont
@@ -155,7 +155,7 @@
   \zihao{-4} \song
   \setlength{\parindent}{2\ccwd}
   \par
-  \addcontentsline{toc}{chapter}{\zihao{-4} \song 摘\quad 要}
+  \addcontentsline{toc}{chapter}{\texorpdfstring{摘\quad 要}{摘要}}
   \begin{spacing}{1.5}
       % 正文字号设置并刷新字体属性
       \zihao{-4} \song \selectfont
@@ -319,8 +319,8 @@
   \renewcommand{\headrulewidth}{0pt}
   \setstretch{1.5} % 1.5倍行距
   \setlength{\parindent}{0pt} % 段首不缩进
-  \addcontentsline{toc}{chapter}{\zihao{-4}  REFERENCES} % 添加参考文献目录条目
   \phantomsection
+  \addcontentsline{toc}{chapter}{REFERENCES} % 添加参考文献目录条目
   \bibliography{#1}
   \endgroup
   \fancyhead{}
@@ -339,7 +339,7 @@
 \newcommand{\acknowledgements}{%
   \clearpage
   \phantomsection
-  \addcontentsline{toc}{chapter}{\zihao{-4}  ACKNOWLEDGEMENTS} % 添加致谢目录条目
+  \addcontentsline{toc}{chapter}{ACKNOWLEDGEMENTS} % 添加致谢目录条目
   \begin{center}
     {\zihao{-2}  \bfseries ACKNOWLEDGEMENTS} % 致谢标题
     \vspace{1em}
