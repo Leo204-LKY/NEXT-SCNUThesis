@@ -3,6 +3,9 @@
 % == 导入额外宏包 ==
 % == 一般不用，有报错再补 ==
 
+% 插入 PDF 诚信声明时，取消注释下面的宏包
+% \usepackage{pdfpages}
+
 % =================
 
 \title{Next SCNU Thesis} % 论文题目
@@ -61,4 +64,9 @@
     % 在 content/acknowledgements.tex 中编辑致谢内容，并使用 \input{content/acknowledgements.tex} 插入到这里
     \acknowledgements
     \input{content/acknowledgements.tex}
+
+    % == 诚信声明 ==
+    % 答辩版不需要诚信声明，最终（归档）版本根据要求可能需要
+    % 填写诚信声明及签名后，以 PDF 格式保存到 content/declaration-zh.pdf，然后取消注释下面的内容（以及本文件开头“导入额外宏包”部分的 \usepackage{pdfpages}）
+    % \includepdf[pages=-]{content/declaration-zh.pdf}
 \end{document}
