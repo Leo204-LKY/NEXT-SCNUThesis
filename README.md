@@ -4,6 +4,8 @@
 > 中方和英方的论文格式要求可能会发生变化，因此本模板不保证完全符合最新要求。使用前请务必自行检查学校、学院及相关项目发布的最新论文格式要求，并建议在提交前交由指导老师检查，根据实际情况调整模板。
 >
 > 本项目仅供参考。因未核对最新格式要求、错误使用或配置本项目、修改模板、编译环境差异等原因造成的格式问题、提交问题或其他后果，项目作者及其他贡献者不承担责任。
+>
+> ⚠️ 请务必完整阅读本 README
 
 - 基于 [FaterYu/NEXT-SCNUThesis](https://github.com/FaterYU/NEXT-SCNUThesis) 修改而来，支持在同一套模板中使用 $\LaTeX$ 编写同时适用于中方（华师）和英方（阿伯丁）的毕业论文，并根据需要渲染成符合中方或英方要求的论文格式。
 
@@ -108,6 +110,16 @@
     - 英方论文主文档选 `main.tex`，编译器选 `pdfLaTeX`
     - 中方论文主文档选 `main-scnu.tex`，编译器选 `XeLaTeX`
 - 其他内容请参考原始仓库中的 README 和 [Wiki](https://github.com/FaterYU/NEXT-SCNUThesis/wiki/How-To-Use)，我会在之后尝试合并这些内容。
+
+### Star History
+
+<a href="https://www.star-history.com/?repos=leo204-lky%2Fnext-scnuthesis&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=leo204-lky/next-scnuthesis&type=date&theme=dark&legend=bottom-right" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=leo204-lky/next-scnuthesis&type=date&legend=bottom-right" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=leo204-lky/next-scnuthesis&type=date&legend=bottom-right" />
+ </picture>
+</a>
 
 ---
 
