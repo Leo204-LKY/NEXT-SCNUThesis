@@ -1,54 +1,78 @@
 # NEXT-SCNUThesis
 
 > [!CAUTION]
-> 中方和英方的论文格式可能会发生变化，因此本模板不一定能完全满足最新的格式要求。建议检查最新的论文格式要求，多将论文发给指导老师检查，并根据需要调整模板。
+> 中方和英方的论文格式要求可能会发生变化，因此本模板不保证完全符合最新要求。使用前请务必自行检查学校、学院及相关项目发布的最新论文格式要求，并建议在提交前交由指导老师检查，根据实际情况调整模板。
+>
+> 本项目仅供参考。因未核对最新格式要求、错误使用或配置本项目、修改模板、编译环境差异等原因造成的格式问题、提交问题或其他后果，项目作者及其他贡献者不承担责任。
 
 - 基于 [FaterYu/NEXT-SCNUThesis](https://github.com/FaterYU/NEXT-SCNUThesis) 修改而来，支持在同一套模板中使用 $\LaTeX$ 编写同时适用于中方（华师）和英方（阿伯丁）的毕业论文，并根据需要渲染成符合中方或英方要求的论文格式。
 
 ### 如何使用
 
-1. 克隆或下载本仓库，上传至 Overleaf 或在本地使用 LaTeX 编辑器打开。
-2. 获取英方论文模板（由于英方有标准 LaTeX 论文模板，为避免英方模板更新，而新版本格式有较大改变，此处不提供英方模板），复制其中的 `main.tex`、`abdnthesis.cls` 和 `abdnshield.pdf` 文件到本仓库的根目录。
-3. 在 `main.tex` 中修改以下内容：
+本项目已包含一份适配后的英方论文模板文件，可以直接使用。由于阿伯丁大学提供的官方 LaTeX 模板可能会更新，也可以选择使用最新的官方模板文件进行替换。
 
-   ```diff
-   ...
+#### 方式一：直接使用本仓库提供的模板
 
-   - \usepackage[round,colon,authoryear]{natbib}
-   + \usepackage[numbers,sort&compress]{natbib}
-   \setlength{\bibsep}{0pt}
-   - \bibliographystyle{apalike}
-   + \bibliographystyle{unsrt}
-   \usepackage{hyperref}
+1. 克隆或下载本仓库，上传至 Overleaf，或在本地使用 LaTeX 编辑器打开。
+2. 根据需要编辑 `main.tex`（英方论文）和 `main-scnu.tex`（中方论文）中的论文信息及章节内容。
+3. 在 `content` 目录下创建各章节的 `.tex` 文件，并在 `main.tex` 和 `main-scnu.tex` 中使用 `\include{content/xxx.tex}` 或 `\input{content/xxx.tex}` 插入到对应位置。
+   - 使用 `\include` 时通常会从新的一页开始；
+   - 使用 `\input` 时内容会直接插入当前位置。
+4. 摘要（中文 / 英文）和致谢分别在 `content/abstract-zh.tex`、`content/abstract-en.tex` 和 `content/acknowledgements.tex` 中编辑，无需直接修改对应环境中的正文。
+5. 图片建议统一放在 `fig` 目录下，并使用相对项目根目录的路径引用，例如：
 
-   \usepackage[T1]{fontenc}
-
-   + \newif\ifTableCaptionTop
-   + \TableCaptionTopfalse
-
-   ...
-
-   \begin{abstract}
-   -  An expansion of the title and contraction of the thesis.
-   +  \input{content/abstract-en.tex}
-   \end{abstract}
-
-   \begin{acknowledgements}
-   -  Much stuff borrowed from elsewhere
-   + \input{content/acknowledgements.tex}
-   \end{acknowledgements}
-
-   ...
-
-   - \bibliography{mybib}
-   + \bibliography{reference}
-
-   ...
+   ```tex
+   \includegraphics{fig/example.png}
    ```
 
-4. 在 `content` 目录下创建各章节的 tex 文件，并在 `main.tex` 和 `main-scnu.tex` 中使用 `\include{content/xxx.tex}` 或 `\input{content/xxx.tex}` （取决于你需要新建一页展示章节，还是与之前的内容展示在同一页）插入到对应位置。
-   - 摘要（中文/英文）和致谢直接在 `abstract-zh.tex`、`abstract-en.tex` 和 `acknowledgements.tex` 中编辑内容，无需修改 `main.tex` 和 `main-scnu.tex`。
-   - 图片建议放在 `fig` 目录下，在 `\includegraphics` 用相对根目录的路径引用，如 `\includegraphics{fig/example.png}`。
+#### 方式二：使用最新的 University of Aberdeen 官方模板
+
+如果 University of Aberdeen 的官方 LaTeX 模板已经更新，建议从最新模板中获取以下文件：
+
+- `main.tex`
+- `abdnthesis.cls`
+- `abdnshield.pdf`
+
+将它们复制到本仓库根目录，并覆盖对应的同名文件。
+
+随后在新的 `main.tex` 中进行以下修改：
+
+```diff
+...
+
+- \usepackage[round,colon,authoryear]{natbib}
++ \usepackage[numbers,sort&compress]{natbib}
+\setlength{\bibsep}{0pt}
+- \bibliographystyle{apalike}
++ \bibliographystyle{unsrt}
+\usepackage{hyperref}
+
+\usepackage[T1]{fontenc}
+
++ \newif\ifTableCaptionTop
++ \TableCaptionTopfalse
+
+...
+
+\begin{abstract}
+-  An expansion of the title and contraction of the thesis.
++  \input{content/abstract-en.tex}
+\end{abstract}
+
+\begin{acknowledgements}
+-  Much stuff borrowed from elsewhere
++  \input{content/acknowledgements.tex}
+\end{acknowledgements}
+
+...
+
+- \bibliography{mybib}
++ \bibliography{reference}
+
+...
+```
+
+完成后，再按照“方式一”中的目录结构编辑各章节、摘要、致谢和图片即可。
 
 ### 注意事项
 
@@ -83,7 +107,7 @@
   - 在 Overleaf 中，点击页面左下角的 ⚙ → 编译器（Compiler），修改“主文档（Main document）”和“编译器（Compiler）”两个选项即可在两种论文格式之间切换。
     - 英方论文主文档选 `main.tex`，编译器选 `pdfLaTeX`
     - 中方论文主文档选 `main-scnu.tex`，编译器选 `XeLaTeX`
-- 其他内容请参考原始仓库中的 README 和 Wiki，我会在之后尝试合并这些内容。
+- 其他内容请参考原始仓库中的 README 和 [Wiki](https://github.com/FaterYU/NEXT-SCNUThesis/wiki/How-To-Use)，我会在之后尝试合并这些内容。
 
 ---
 
